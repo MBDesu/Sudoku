@@ -17,12 +17,26 @@ public class Tester {
 		System.out.println("Original: ");
 		s.printBoard();
 		System.out.println();
-		if(s.solve()) {
-			System.out.println("Solved: ");
-			s.printBoard();
-		} else {
-			System.out.println("No solutions!");
-		}
+		System.out.println("Solved: ");
+		long start = System.nanoTime();
+		s.solve();
+		long end = System.nanoTime();
+		long milliseconds = (end - start) / 1000000;
+		s.printBoard();
+		System.out.println("Solve took " + milliseconds + "ms to execute.");
+		System.out.println();
+		
+		Sudoku t = new Sudoku(); // empty board tests
+		System.out.println("Original: ");
+		t.printBoard();
+		System.out.println();
+		System.out.println("Solved: ");
+		start = System.nanoTime();
+		t.solve();
+		end = System.nanoTime();
+		milliseconds = (end - start) / 1000000;
+		t.printBoard();
+		System.out.println("Solve took " + milliseconds + "ms to execute.");
 		
 	}
 	
