@@ -71,11 +71,13 @@ public class Sudoku {
 							if(solve()) { // continue down that path and see if it all works out
 								return true; // if the path all works out, the puzzle is solved
 							} else {
-								board[i][j] = 0; // if it doesn't all work out, set the square to 0 and try the next number on next loop iteration
+								board[i][j] = 0; // if it doesn't all work out, set the square to 0 and try the next
+													// number on next loop iteration
 							}
 						}
 					}
-					return false; // reaching this condition means no numbers fit into the square and the puzzle is unsolvable
+					return false; // reaching this condition means no numbers fit into the square and the puzzle
+									// is unsolvable
 				}
 			}
 		}
